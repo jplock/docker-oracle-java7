@@ -2,10 +2,9 @@
 
 FROM ubuntu
 
-MAINTAINER Justin Plock "jplock@gmail.com"
+MAINTAINER Justin Plock <jplock@gmail.com>
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-
+RUN sed 's/main$/main universe/' -i /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
 
